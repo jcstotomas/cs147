@@ -1,0 +1,22 @@
+<h1>Visualizations</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<script>
+var ctx = document.getElementById('myChart')
+console.log({{data|safe}})
+var myChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'sensor over time',
+            data: {{data | safe}},
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 1,
+            fill: false
+        }]
+    },
+
+});
+</script>
